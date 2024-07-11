@@ -32,65 +32,63 @@ function Net_Salary_Calculator() {
   };
 
   const nhif = () => {
-    if (salary >= 1000) {
-      if (basic_salary >= 1000 && basic_salary <= 5999) {
-        nhif_deduction += 150;
-        return nhif_deduction;
-      } else if (basic_salary >= 6000 && basic_salary <= 7999) {
-        nhif_deduction += 300;
-        return nhif_deduction;
-      } else if (basic_salary >= 8000 && basic_salary <= 11999) {
-        nhif_deduction += 400;
-        return nhif_deduction;
-      } else if (basic_salary >= 12000 && basic_salary <= 14999) {
-        nhif_deduction += 500;
-        return nhif_deduction;
-      } else if (basic_salary >= 15000 && basic_salary <= 19999) {
-        nhif_deduction += 600;
-        return nhif_deduction;
-      } else if (basic_salary >= 20000 && basic_salary <= 24999) {
-        nhif_deduction += 750;
-        return nhif_deduction;
-      } else if (basic_salary >= 25000 && basic_salary <= 29999) {
-        nhif_deduction += 850;
-        return nhif_deduction;
-      } else if (basic_salary >= 30000 && basic_salary <= 34999) {
-        nhif_deduction += 900;
-        return nhif_deduction;
-      } else if (basic_salary >= 35000 && basic_salary <= 39999) {
-        nhif_deduction += 950;
-        return nhif_deduction;
-      } else if (basic_salary >= 40000 && basic_salary <= 44999) {
-        nhif_deduction += 1000;
-        return nhif_deduction;
-      } else if (basic_salary >= 45000 && basic_salary <= 49999) {
-        nhif_deduction += 1100;
-        return nhif_deduction;
-      } else if (basic_salary >= 50000 && basic_salary <= 59999) {
-        nhif_deduction += 1200;
-        return nhif_deduction;
-      } else if (basic_salary >= 60000 && basic_salary <= 69999) {
-        nhif_deduction += 1300;
-        return nhif_deduction;
-      } else if (basic_salary >= 70000 && basic_salary <= 79999) {
-        nhif_deduction += 1400;
-        return nhif_deduction;
-      } else if (basic_salary >= 80000 && basic_salary <= 89999) {
-        nhif_deduction += 1500;
-        return nhif_deduction;
-      } else if (basic_salary >= 90000 && basic_salary <= 99999) {
-        nhif_deduction += 1600;
-        return nhif_deduction;
-      } else if (basic_salary >= 100000) {
-        nhif_deduction += 1700;
-        return nhif_deduction;
-      } else {
-        nhif_deduction += 0;
-        return nhif_deduction;
-      }
+    if (basic_salary >= 1000 && basic_salary <= 5999) {
+      nhif_deduction += 150;
+      return nhif_deduction;
+    } else if (basic_salary >= 6000 && basic_salary <= 7999) {
+      nhif_deduction += 300;
+      return nhif_deduction;
+    } else if (basic_salary >= 8000 && basic_salary <= 11999) {
+      nhif_deduction += 400;
+      return nhif_deduction;
+    } else if (basic_salary >= 12000 && basic_salary <= 14999) {
+      nhif_deduction += 500;
+      return nhif_deduction;
+    } else if (basic_salary >= 15000 && basic_salary <= 19999) {
+      nhif_deduction += 600;
+      return nhif_deduction;
+    } else if (basic_salary >= 20000 && basic_salary <= 24999) {
+      nhif_deduction += 750;
+      return nhif_deduction;
+    } else if (basic_salary >= 25000 && basic_salary <= 29999) {
+      nhif_deduction += 850;
+      return nhif_deduction;
+    } else if (basic_salary >= 30000 && basic_salary <= 34999) {
+      nhif_deduction += 900;
+      return nhif_deduction;
+    } else if (basic_salary >= 35000 && basic_salary <= 39999) {
+      nhif_deduction += 950;
+      return nhif_deduction;
+    } else if (basic_salary >= 40000 && basic_salary <= 44999) {
+      nhif_deduction += 1000;
+      return nhif_deduction;
+    } else if (basic_salary >= 45000 && basic_salary <= 49999) {
+      nhif_deduction += 1100;
+      return nhif_deduction;
+    } else if (basic_salary >= 50000 && basic_salary <= 59999) {
+      nhif_deduction += 1200;
+      return nhif_deduction;
+    } else if (basic_salary >= 60000 && basic_salary <= 69999) {
+      nhif_deduction += 1300;
+      return nhif_deduction;
+    } else if (basic_salary >= 70000 && basic_salary <= 79999) {
+      nhif_deduction += 1400;
+      return nhif_deduction;
+    } else if (basic_salary >= 80000 && basic_salary <= 89999) {
+      nhif_deduction += 1500;
+      return nhif_deduction;
+    } else if (basic_salary >= 90000 && basic_salary <= 99999) {
+      nhif_deduction += 1600;
+      return nhif_deduction;
+    } else if (basic_salary >= 100000) {
+      nhif_deduction += 1700;
+      return nhif_deduction;
+    } else {
+      nhif_deduction += 0;
+      return nhif_deduction;
     }
-  };
-  net_salary = basic_salary - (kra + nssf + nhif);
+  }
+  net_salary = basic_salary - (kra() + nssf() + nhif());
   console.log(net_salary);
 }
 
